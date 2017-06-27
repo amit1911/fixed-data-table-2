@@ -1,5 +1,5 @@
 /**
- * FixedDataTable v1.0.1 
+ * FixedDataTable v1.0.2 
  *
  * Copyright Schrodinger, LLC
  * All rights reserved.
@@ -1070,11 +1070,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _calculateState: function _calculateState( /*object*/props, /*?object*/oldState) /*object*/{
 	    var _this = this;
 
-	    // update row heights
-	    [].concat(_toConsumableArray(Array(props.rowsCount).keys())).forEach(function (index) {
-	      _this._scrollHelper._updateRowHeight(index);
-	    });
-
 	    (0, _invariant2.default)(props.height !== undefined || props.maxHeight !== undefined, 'You must set either a height or a maxHeight');
 
 	    var children = [];
@@ -1135,6 +1130,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      firstRowOffset = scrollState.offset;
 	      scrollY = scrollState.position;
 	    }
+
+	    // update row heights
+	    [].concat(_toConsumableArray(Array(props.rowsCount).keys())).forEach(function (index) {
+	      _this._scrollHelper._updateRowHeight(index);
+	    });
 
 	    var columnResizingData;
 	    if (props.isColumnResizing) {
