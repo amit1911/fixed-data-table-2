@@ -14,7 +14,7 @@ class CollapseExample extends React.Component {
     super(props);
     this.state = {
       collapsedRows: new Set(),
-      dataList: new FakeObjectDataListStore(2000)
+      dataList: new FakeObjectDataListStore(10)
     }
 
     this._handleCollapseClick = this._handleCollapseClick.bind(this);
@@ -30,7 +30,7 @@ class CollapseExample extends React.Component {
   }
 
   _rowHeightGetter(index) {
-    return this.state.collapsedRows.has(index) ? 100 : 50;
+    return this.state.collapsedRows.has(index) ? 373 : 50;
   }
 
   render() {
